@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+output/extracted_text/*
+output/parsed_json/*
+input/resumes/*
+!.gitkeep

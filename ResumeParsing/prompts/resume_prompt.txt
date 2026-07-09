@@ -1,0 +1,3 @@
+This project builds the prompt dynamically in src/prompt.py.
+
+Open src/prompt.py to edit the extraction instructions.

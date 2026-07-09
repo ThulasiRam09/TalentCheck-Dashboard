@@ -1,0 +1,65 @@
+{
+  "example_request_upload": {
+    "endpoint": "POST /ats/match",
+    "description": "Upload a resume PDF or DOCX. System compares against all 6 JDs.",
+    "form_field": "file"
+  },
+
+  "example_request_json": {
+    "endpoint": "POST /ats/match-from-json",
+    "description": "Send candidate skills as JSON (for teammate integration)",
+    "body": {
+      "candidate_name": "Rohan Verma",
+      "email": "rohan@example.com",
+      "skills": [
+        "python", "java", "sql", "machine learning", "scikit-learn",
+        "pandas", "numpy", "rest api", "git", "docker"
+      ],
+      "education": ["B.Tech Computer Science"],
+      "certifications": [],
+      "projects": ["ML-based Resume Classifier", "REST API for Student Portal"]
+    }
+  },
+
+  "example_response": {
+    "candidate_name": "Rohan Verma",
+    "total_jobs_analyzed": 6,
+    "analysis": [
+      {
+        "company": "Google LLC",
+        "role": "Data Scientist",
+        "match_score": 82.5,
+        "eligibility": "Eligible",
+        "matched_skills": ["python", "machine learning", "sql", "pandas", "scikit-learn"],
+        "missing_skills": ["tensorflow", "bigquery", "spark"],
+        "partial_matches": [
+          {
+            "candidate_skill": "scikit-learn",
+            "jd_skill": "sklearn",
+            "similarity": 92.0
+          }
+        ],
+        "additional_skills": ["java", "rest api", "git"],
+        "recommendations": [
+          "⚠ Required: Learn TensorFlow → tensorflow.org",
+          "⚠ Required: Learn BigQuery",
+          "Recommended: Learn Apache Spark"
+        ]
+      },
+      {
+        "company": "Microsoft",
+        "role": "Data Analyst",
+        "match_score": 74.0,
+        "eligibility": "Moderately Eligible",
+        "matched_skills": ["python", "sql", "pandas"],
+        "missing_skills": ["power bi", "azure", "excel"],
+        "partial_matches": [],
+        "additional_skills": ["machine learning", "docker"],
+        "recommendations": [
+          "⚠ Required: Learn Power BI → Microsoft Learn",
+          "Recommended: Learn Microsoft Azure → learn.microsoft.com"
+        ]
+      }
+    ]
+  }
+}

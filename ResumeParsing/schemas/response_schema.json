@@ -1,0 +1,57 @@
+{
+  "source_type": "resume",
+  "source_file": "resume.pdf",
+  "company": "",
+  "role": "",
+
+  "name": "",
+  "email": "",
+  "phone": "",
+  "linkedin": "",
+  "github": "",
+
+  "education": [
+    {
+      "institution": "",
+      "degree": "",
+      "field": "",
+      "year": "",
+      "evidence": ""
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "",
+      "description": "",
+      "technologies": [],
+      "evidence": ""
+    }
+  ],
+
+  "experience": [
+    {
+      "organization": "",
+      "role": "",
+      "duration": "",
+      "description": "",
+      "technologies": [],
+      "evidence": ""
+    }
+  ],
+
+  "certifications": [],
+  "hackathons": [],
+  "preferred_roles": [],
+
+  "skills": [
+    {
+      "skill_name": "Python",
+      "category_code": "COD",
+      "evidence": "Built projects using Python",
+      "confidence": "high"
+    }
+  ],
+
+  "summary": ""
+}
