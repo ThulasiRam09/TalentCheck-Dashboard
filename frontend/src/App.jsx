@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { extractTextFromFile } from './lib/fileExtract';
 
-const API_BASE = 'http://localhost:8000/api';
+const API_BASE = 'https://talentcheck-dashboard-5.onrender.com/api';
 
 const CATEGORY_MAP = {
   "COD": "Coding (COD)",
