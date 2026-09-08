@@ -7,3 +7,4 @@ pydantic
 PyMuPDF
 python-docx
 google-genai
+google-generativeai
