@@ -78,6 +78,18 @@ TalentCheck Dashboard is an all-in-one HR-tech solution designed to optimize the
 
 ---
 
+## ☁️ Deploy on Render
+
+This repository includes a root-level `render.yaml` Blueprint for deploying the FastAPI API and built React frontend as one web service.
+
+1. In the [Render Dashboard](https://dashboard.render.com/), select **New → Blueprint** and connect this repository.
+2. When prompted, set `GOOGLE_API_KEY` to your Google AI Studio key. Keep this value in Render's environment settings; do not commit it to the repository.
+3. Deploy the Blueprint. Render builds the frontend and starts the API; the dashboard and API will share the resulting `onrender.com` URL.
+
+The free web service may sleep when idle, so its first request after inactivity can take longer. The deployment URL is shown in the Render service dashboard after the first deploy succeeds.
+
+---
+
 ## 📂 Project Structure
 
 ```

@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
@@ -372,6 +373,11 @@ def skill_match(payload: SkillMatchPayload):
         logger.exception("Skill match calculation failed")
         raise HTTPException(status_code=500, detail=f"Matching engine error: {e}")
 
+frontend_dist = root_dir / "frontend" / "dist"
+if frontend_dist.is_dir():
+    app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="frontend")
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="localhost", port=8000)
+    port = int(os.getenv("PORT", "8001"))
+    uvicorn.run(app, host="0.0.0.0", port=port)

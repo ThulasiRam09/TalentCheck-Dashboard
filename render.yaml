@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: talentcheck-dashboard
+    runtime: python
+    plan: free
+    buildCommand: pip install -r JD/backend/requirements.txt && npm ci --prefix frontend && npm run build --prefix frontend
+    startCommand: python server.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.2
+      - key: GOOGLE_API_KEY
+        sync: false
